@@ -1,0 +1,462 @@
+.galapagos-main {
+  min-height: 100vh;
+  background: #f4f3eb;
+  color: #253b31;
+  font-family: 'Segoe UI', 'Leelawadee UI', Tahoma, sans-serif;
+  color-scheme: light;
+}
+
+.galapagos-page {
+  --gal-ink: #253b31;
+  --gal-muted: #64776c;
+  --gal-faint: #7f8c81;
+  --gal-green: #35694e;
+  --gal-green-dark: #254c39;
+  --gal-line: #d9e0d8;
+  --gal-cream: #fbfaf5;
+  --gal-ocean: #dcebed;
+  min-height: 100vh;
+  color: var(--gal-ink);
+}
+
+.galapagos-page button, .galapagos-page a { font: inherit; }
+.galapagos-page a { color: inherit; text-decoration: none; }
+.galapagos-page button:focus-visible, .galapagos-page a:focus-visible { outline: 3px solid #668f70; outline-offset: 3px; }
+
+.galapagos-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 86px;
+  padding: 14px max(36px, calc((100vw - 1600px) / 2));
+  border-bottom: 1px solid #dfe4dd;
+  background: #fbfaf5;
+}
+
+.galapagos-brand { display: inline-flex; align-items: center; gap: 13px; min-width: 0; }
+.galapagos-brand-mark { display: grid; width: 42px; height: 42px; flex: 0 0 auto; place-items: center; border: 1px solid #b9cbbc; border-radius: 50%; color: var(--gal-green); }
+.galapagos-brand-mark svg { width: 23px; height: 23px; fill: currentColor; }
+.galapagos-brand strong, .galapagos-brand small { display: block; }
+.galapagos-brand strong { color: #284936; font-size: 13px; font-weight: 700; letter-spacing: .105em; }
+.galapagos-brand small { margin-top: 3px; color: #718276; font-family: Georgia, serif; font-size: 13px; font-style: italic; }
+.galapagos-header-note { display: inline-flex; align-items: center; color: #7a897d; font-size: 10px; font-weight: 650; letter-spacing: .12em; }
+.galapagos-header-note i { width: 7px; height: 7px; margin-right: 9px; border-radius: 50%; background: #668c69; }
+
+.galapagos-layout { display: grid; grid-template-columns: 182px minmax(0, 1fr); gap: 32px; width: min(1600px, calc(100% - 72px)); margin: 0 auto; padding-top: 34px; }
+.galapagos-sidebar { align-self: start; padding-top: 4px; }
+.galapagos-back-link { display: inline-flex; align-items: center; gap: 9px; color: #66786c !important; font-size: 11px !important; }
+.galapagos-back-link:hover { color: var(--gal-green-dark) !important; }
+.galapagos-back-link:first-letter { color: var(--gal-green); }
+.galapagos-sidebar-label { margin: 36px 0 12px; color: #89958a; font-size: 9px; font-weight: 700; letter-spacing: .15em; }
+.galapagos-section-nav { display: grid; gap: 4px; }
+.galapagos-section-nav button { display: grid; grid-template-columns: 24px minmax(0, 1fr) 14px; align-items: center; gap: 8px; min-height: 42px; padding: 0 10px; border: 1px solid transparent; border-radius: 5px; background: transparent; color: #768378; text-align: left; font-size: 12px; cursor: default; }
+.galapagos-section-nav button.is-current { border-color: #cddacf; background: #e8eee7; color: #2d563c; font-weight: 650; }
+.galapagos-section-nav button:disabled { opacity: .7; }
+.galapagos-section-nav .nav-index { color: #94a094; font: 10px Consolas, monospace; }
+.galapagos-section-nav button.is-current .nav-index { color: #4f7958; }
+.galapagos-section-nav button > i { color: #9aab9c; font-size: 9px; font-style: normal; text-align: right; }
+.galapagos-section-nav button.is-current > i { color: #54795c; font-size: 12px; }
+.galapagos-sidebar-note { display: grid; grid-template-columns: 22px 1fr; gap: 8px; margin-top: 34px; padding: 14px 10px; border-top: 1px solid #d8e0d7; color: #738176; }
+.galapagos-sidebar-note .note-mark { color: #66886c; font: 21px Georgia, serif; }
+.galapagos-sidebar-note p { margin: 0; font-family: Georgia, serif; font-size: 12px; line-height: 1.55; }
+
+.galapagos-content { min-width: 0; }
+.galapagos-page-heading { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin: 0 0 22px; }
+.galapagos-eyebrow { display: inline-block; color: #788a7c; font-size: 9px; font-weight: 700; letter-spacing: .145em; }
+.galapagos-page-heading h1 { margin: 7px 0 6px; color: #263e31; font-size: clamp(27px, 3vw, 36px); font-weight: 500; letter-spacing: -.045em; line-height: 1.1; }
+.galapagos-page-heading p { margin: 0; color: #718075; font-size: 12px; line-height: 1.6; }
+.galapagos-heading-stamp { position: relative; padding: 8px 0 8px 13px; border-left: 1px solid #c4d0c5; color: #809084; font: 9px/1.5 Consolas, monospace; letter-spacing: .1em; }
+
+.galapagos-exploration { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(370px, .88fr); align-items: start; gap: 20px; }
+.galapagos-map-card, .galapagos-profile { min-width: 0; border: 1px solid #dce2db; border-radius: 7px; background: var(--gal-cream); }
+.galapagos-map-card { padding: 18px; }
+.galapagos-map-card-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 14px; }
+.galapagos-map-card-heading h2 { margin: 5px 0 0; color: #2e4b39; font-size: 18px; font-weight: 550; letter-spacing: -.025em; }
+.map-island-count { padding: 6px 9px; border: 1px solid #dbe2da; border-radius: 999px; color: #758377; font-size: 10px; white-space: nowrap; }
+.galapagos-map-viewport { position: relative; overflow: hidden; width: 100%; aspect-ratio: 800 / 560; border: 1px solid #cbdcda; border-radius: 4px; background: var(--gal-ocean); }
+.galapagos-map-art { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.ocean-label { fill: #88a9a9; font: 10px Consolas, monospace; letter-spacing: .19em; opacity: .8; }
+.map-map-note { fill: #7d9997; font: 8px Consolas, monospace; letter-spacing: .1em; }
+.map-compass { fill: none; stroke: #6c908d; stroke-width: 1.2; opacity: .78; }
+.map-compass text { fill: #638582; stroke: none; font: 10px Consolas, monospace; }
+.map-island-shore { fill: #9b7e5d; opacity: .25; }
+.map-island-land { fill: #84916f; stroke: #69785e; stroke-width: 2; stroke-linejoin: round; }
+.map-island-2 .map-island-land, .map-island-6 .map-island-land, .map-island-8 .map-island-land { fill: #8f906d; }
+.map-island-3 .map-island-land, .map-island-9 .map-island-land { fill: #788a68; }
+.map-island-4 .map-island-land, .map-island-7 .map-island-land { fill: #879372; }
+.map-island-5 .map-island-land, .map-island-10 .map-island-land { fill: #7e8e6f; }
+.galapagos-marker-layer { position: absolute; inset: 0; }
+.galapagos-island-marker { position: absolute; top: clamp(28px, var(--marker-y), calc(100% - 32px)); left: clamp(43px, var(--marker-x), calc(100% - 43px)); display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 0; transform: translate(-50%, -50%); border: 0; background: transparent; color: #394d3e; cursor: pointer !important; }
+.island-marker-badge { display: grid; width: 31px; height: 31px; place-items: center; border: 1px solid #c6d5c9; border-radius: 50%; background: #fbfaf5; color: #50785a; box-shadow: 0 2px 5px rgba(43, 67, 47, .12); }
+.island-marker-badge svg { width: 17px; height: 17px; fill: currentColor; }
+.island-marker-name { max-width: 90px; padding: 2px 4px; border-radius: 2px; background: rgba(250, 249, 242, .83); color: #415445; font-size: 9px; font-weight: 600; line-height: 1.15; text-align: center; white-space: nowrap; }
+.galapagos-island-marker.is-selected .island-marker-badge { border: 2px solid #487857; color: #356748; }
+.galapagos-island-marker.is-selected .island-marker-name { background: #fbfaf5; color: #2b563b; }
+.map-key { position: absolute; bottom: 12px; left: 12px; display: flex; flex-wrap: wrap; gap: 7px 13px; max-width: min(78%, 270px); padding: 7px 9px; border: 1px solid rgba(199, 215, 211, .9); border-radius: 4px; background: rgba(250, 250, 244, .91); color: #617468; font-size: 9px; }
+.map-key > span { display: inline-flex; align-items: center; gap: 6px; }
+.map-key-island { width: 9px; height: 7px; border: 1px solid #69785e; border-radius: 60% 40% 50% 45%; background: #84916f; }
+.map-key-marker { display: inline-flex; color: #50785a; }
+.map-key-marker svg { width: 13px; height: 13px; fill: currentColor; }
+.galapagos-map-caption { margin: 10px 1px 0; color: #849087; font-family: Georgia, serif; font-size: 11px; font-style: italic; line-height: 1.5; }
+
+.galapagos-profile { padding: 20px; }
+.profile-kicker { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-bottom: 13px; border-bottom: 1px solid #e0e5de; color: #849185; font: 8px Consolas, monospace; letter-spacing: .09em; }
+.profile-kicker > span:first-child { display: inline-flex; align-items: center; gap: 7px; }
+.profile-kicker i { width: 6px; height: 6px; border-radius: 50%; background: #6b8e6d; }
+.profile-title-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; }
+.profile-title-row h2 { margin: 0; color: #274634; font-size: 28px; font-weight: 550; letter-spacing: -.045em; }
+.profile-symbol { color: #9cac99; font: 29px Georgia, serif; }
+.profile-intro { margin: 7px 0 15px; color: #748176; font-family: Georgia, serif; font-size: 12px; line-height: 1.55; }
+.island-facts { margin: 0; border-top: 1px solid #dfe4dd; }
+.island-facts > div { display: grid; grid-template-columns: 112px minmax(0,1fr); gap: 11px; padding: 10px 0; border-bottom: 1px solid #e6e9e2; }
+.island-facts dt { color: #708173; font-size: 10px; font-weight: 650; }
+.island-facts dd { margin: 0; color: #4e6154; font-size: 11px; line-height: 1.55; }
+.island-finch-section { margin-top: 17px; }
+.finch-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 8px; margin-bottom: 11px; }
+.finch-section-heading h3 { max-width: 270px; margin: 5px 0 0; color: #294b37; font-size: 16px; font-weight: 550; line-height: 1.2; }
+.species-total { padding-bottom: 2px; color: #879387; font-size: 10px; white-space: nowrap; }
+.finch-card-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 10px; }
+.finch-card { min-width: 0; overflow: hidden; border: 1px solid #dce2da; border-radius: 4px; background: #fffefa; }
+.finch-photo { position: relative; display: block; overflow: hidden; width: 100%; aspect-ratio: 1.55 / 1; background: #d4ddd2; }
+.finch-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
+.finch-photo-credit { position: absolute; right: 0; bottom: 0; left: 0; padding: 5px 6px; background: linear-gradient(transparent, rgba(22, 39, 29, .75)); color: #f5f5e9; font-size: 7px; line-height: 1.3; }
+.finch-card-copy { padding: 9px 10px 10px; }
+.finch-card-copy h4 { margin: 0; color: #2c4937; font-size: 12px; font-weight: 700; line-height: 1.25; }
+.finch-scientific-name { margin: 2px 0 0; color: #738278; font-family: Georgia, serif; font-size: 10px; font-style: italic; }
+.finch-description { min-height: 48px; margin: 7px 0 8px; color: #5e6f63; font-size: 10px; line-height: 1.45; }
+.finch-facts { display: grid; gap: 5px; margin: 0; padding-top: 7px; border-top: 1px solid #e5e9e2; }
+.finch-facts > div { display: grid; grid-template-columns: 38px minmax(0,1fr); gap: 5px; }
+.finch-facts dt { color: #849184; font-size: 9px; font-weight: 650; }
+.finch-facts dd { margin: 0; color: #4d6153; font-size: 9px; line-height: 1.35; }
+.finch-island-note { margin: 8px 0 0; padding: 7px; border-left: 2px solid #9aaf92; background: #f1f4eb; color: #657364; font-size: 9px; line-height: 1.4; }
+.finch-source-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; color: #456c4e !important; font-size: 9px !important; }
+.finch-source-link:hover { text-decoration: underline !important; }
+.finch-source-link span { font-size: 10px; }
+.record-note { margin: 11px 0 0; color: #818d82; font-family: Georgia, serif; font-size: 10px; font-style: italic; line-height: 1.5; }
+.record-note a { color: #4e7455 !important; text-decoration: underline !important; text-underline-offset: 2px; }
+.galapagos-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 22px 0 0; padding: 12px 0 18px; border-top: 1px solid #dce2da; color: #879288; font: 8px Consolas, monospace; letter-spacing: .09em; }
+.galapagos-footer a { color: #637668 !important; font: 10px 'Segoe UI', sans-serif; letter-spacing: 0; }
+.galapagos-footer a:hover { color: #315940 !important; }
+.galapagos-footer b { margin-left: 4px; color: #557a5a; }
+
+@media (max-width: 1180px) {
+  .galapagos-layout { grid-template-columns: 164px minmax(0, 1fr); gap: 24px; width: calc(100% - 48px); }
+  .galapagos-exploration { grid-template-columns: minmax(0, 1fr); }
+  .galapagos-profile { display: grid; grid-template-columns: minmax(220px, .7fr) minmax(0, 1.3fr); column-gap: 22px; }
+  .profile-kicker, .profile-title-row, .profile-intro, .island-facts { grid-column: 1; }
+  .island-finch-section { grid-column: 2; grid-row: 1 / span 4; margin-top: 0; }
+  .finch-card-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .galapagos-header { min-height: 74px; padding: 12px 20px; }
+  .galapagos-header-note { display: none; }
+  .galapagos-layout { display: block; width: calc(100% - 36px); padding-top: 22px; }
+  .galapagos-sidebar { padding: 0 0 16px; }
+  .galapagos-sidebar-label, .galapagos-sidebar-note { display: none; }
+  .galapagos-section-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; margin-top: 12px; padding: 0 0 3px; }
+  .galapagos-section-nav button { display: flex; min-width: 0; gap: 7px; min-height: 35px; padding: 0 9px; border-color: #d9e0d8; font-size: 10px; }
+  .galapagos-section-nav button > i { display: none; }
+  .galapagos-section-nav .nav-index { font-size: 9px; }
+  .galapagos-page-heading { margin-bottom: 17px; }
+  .galapagos-page-heading h1 { font-size: clamp(25px, 6vw, 32px); }
+  .galapagos-page-heading p { max-width: 510px; font-size: 11px; }
+  .galapagos-heading-stamp { display: none; }
+  .galapagos-exploration { gap: 15px; }
+  .galapagos-map-card { padding: 13px; }
+  .galapagos-map-card-heading h2 { font-size: 16px; }
+  .map-island-count { font-size: 9px; }
+  .galapagos-profile { display: block; padding: 16px; }
+  .island-finch-section { margin-top: 17px; }
+}
+
+@media (max-width: 520px) {
+  .galapagos-header { padding-inline: 16px; }
+  .galapagos-brand-mark { width: 37px; height: 37px; }
+  .galapagos-brand strong { font-size: 11px; }
+  .galapagos-brand small { font-size: 12px; }
+  .galapagos-layout { width: calc(100% - 24px); padding-top: 17px; }
+  .galapagos-page-heading { align-items: start; }
+  .galapagos-page-heading h1 { font-size: 25px; }
+  .galapagos-page-heading p { max-width: 330px; }
+  .galapagos-map-card { padding: 10px; }
+  .galapagos-map-viewport { aspect-ratio: 800 / 560; }
+  .ocean-label { font-size: 12px; }
+  .map-map-note { display: none; }
+  .island-marker-name { display: none; }
+  .galapagos-island-marker.is-selected .island-marker-name { display: block; }
+  .map-key { bottom: 6px; left: 6px; gap: 5px 9px; max-width: 74%; padding: 5px 6px; font-size: 8px; }
+  .galapagos-island-marker { gap: 1px; }
+  .island-marker-badge { width: 27px; height: 27px; }
+  .island-marker-badge svg { width: 15px; height: 15px; }
+  .island-marker-name { max-width: 78px; padding: 2px 3px; font-size: 8px; }
+  .galapagos-map-caption { font-size: 10px; }
+  .profile-kicker { font-size: 7px; }
+  .profile-title-row h2 { font-size: 25px; }
+  .island-facts > div { grid-template-columns: 94px minmax(0, 1fr); gap: 8px; }
+  .island-facts dt { font-size: 9px; }
+  .island-facts dd { font-size: 10px; }
+  .finch-card-list { grid-template-columns: minmax(0,1fr); gap: 11px; }
+  .finch-card { display: grid; grid-template-columns: minmax(115px, .8fr) minmax(0, 1.2fr); }
+  .finch-photo { height: 100%; min-height: 190px; aspect-ratio: auto; }
+  .finch-photo-credit { padding: 5px; font-size: 7px; }
+  .finch-card-copy { padding: 10px; }
+  .finch-card-copy h4 { font-size: 12px; }
+  .finch-description { min-height: 0; font-size: 10px; }
+  .finch-facts { gap: 6px; }
+  .galapagos-footer { align-items: start; flex-direction: column; }
+}
+
+/* Photo specimens replace the old decorative bird markers on the map. */
+body:has(.galapagos-page) { min-width: 0; }
+.galapagos-island-marker { top: clamp(30px, var(--marker-y), calc(100% - 32px)); left: clamp(36px, var(--marker-x), calc(100% - 36px)); z-index: 2; display: grid; justify-items: center; gap: 3px; width: auto; padding: 0; transform: translate(-50%, -50%); border: 0; background: transparent; color: #394d3e; }
+.galapagos-island-marker.is-selected { z-index: 4; }
+.island-marker-photos { display: grid; grid-template-columns: 54px; gap: 3px; justify-items: center; }
+.galapagos-island-marker.is-selected .island-marker-photos { grid-template-columns: repeat(2, 54px); }
+.galapagos-island-marker.is-selected .island-marker-photos { position: absolute; top: 50%; left: 50%; width: max-content; transform: translate(calc(-50% + var(--photo-offset-x, 0px)), calc(-50% + var(--photo-offset-y, 0px))); }
+.map-specimen-photo { display: grid; grid-template-rows: 34px auto; gap: 2px; width: 54px; min-width: 0; padding: 2px; border: 1px solid #cfd8c9; border-radius: 4px; background: rgba(255, 254, 248, .97); box-shadow: 0 2px 5px rgba(44, 60, 45, .2); cursor: pointer !important; }
+.map-specimen-photo img { display: block; width: 100%; height: 34px; border-radius: 2px; background: #d9dfd0; object-fit: cover; object-position: center 40%; }
+.map-specimen-photo span { overflow: hidden; color: #495b4a; font-size: 6px; font-weight: 650; line-height: 1.1; text-align: center; text-overflow: ellipsis; white-space: nowrap; }
+.galapagos-island-marker.is-selected .map-specimen-photo { border-color: #8da88a; box-shadow: 0 2px 7px rgba(44, 60, 45, .22); }
+.island-marker-name { display: block; max-width: 94px; min-height: 0; padding: 2px 5px; border: 1px solid rgba(217, 224, 213, .8); border-radius: 2px; background: rgba(250, 249, 242, .95); color: #415445; font-size: 8px !important; font-weight: 700; line-height: 1.15; text-align: center; white-space: nowrap; cursor: pointer !important; }
+.galapagos-island-marker.is-selected .island-marker-name { border-color: #54805c; background: #fbfaf5; color: #29563a; box-shadow: 0 0 0 2px rgba(255, 254, 250, .76); }
+.map-key-photo { display: inline-block; width: 13px; height: 11px; border: 1px solid #9ca88f; border-radius: 2px; background: linear-gradient(145deg, #bdc49d 0 42%, #637a58 43% 70%, #d4be93 71%); }
+.map-marker-pinta { --photo-offset-x: 34px; --photo-offset-y: 16px; }
+.map-marker-marchena { --photo-offset-x: 38px; --photo-offset-y: -18px; }
+.map-marker-genovesa { --photo-offset-x: 56px; --photo-offset-y: -5px; }
+.map-marker-fernandina { --photo-offset-x: -66px; --photo-offset-y: -12px; }
+.map-marker-isabela { --photo-offset-x: 66px; --photo-offset-y: 24px; }
+.map-marker-santiago { --photo-offset-x: -20px; --photo-offset-y: -38px; }
+.map-marker-santa-cruz { --photo-offset-x: 38px; --photo-offset-y: -38px; }
+.map-marker-san-cristobal { --photo-offset-x: -50px; --photo-offset-y: -84px; }
+.map-marker-floreana { --photo-offset-x: 42px; --photo-offset-y: -38px; }
+.map-marker-espanola { --photo-offset-x: -8px; --photo-offset-y: -82px; }
+.map-island-pinta .map-island-land, .map-island-santa-cruz .map-island-land, .map-island-san-cristobal .map-island-land { fill: url(#terrain-green); }
+.map-island-marchena .map-island-land, .map-island-fernandina .map-island-land { fill: url(#terrain-lava); }
+.map-island-genovesa .map-island-land, .map-island-espanola .map-island-land { fill: url(#terrain-dry); }
+.map-island-isabela .map-island-land, .map-island-santiago .map-island-land, .map-island-floreana .map-island-land { fill: url(#terrain-mixed); }
+.terrain-stipple-layer { fill: url(#terrain-stipple); opacity: .44; }
+.map-island-coastline { fill: none; stroke: #e8d9b5; stroke-width: 1.2; stroke-linejoin: round; opacity: .78; }
+.island-marker-name { position: relative; z-index: 3; }
+@media (max-width: 520px) {
+  .galapagos-island-marker { left: clamp(28px, var(--marker-x), calc(100% - 28px)); }
+  .galapagos-island-marker:not(.is-selected) .island-marker-photos { display: none; }
+  .galapagos-island-marker.is-selected .island-marker-photos { grid-template-columns: repeat(2, 42px); gap: 3px; }
+  .map-specimen-photo { grid-template-rows: 29px auto; width: 42px; }
+  .map-specimen-photo img { height: 29px; }
+  .map-specimen-photo span { font-size: 5px; }
+  .island-marker-name { display: block !important; max-width: 76px; padding: 2px 4px; font-size: 7px !important; }
+  .galapagos-island-marker.is-selected .map-specimen-photo:nth-child(n + 3) { display: none; }
+  .map-marker-pinta { --photo-offset-x: 20px; --photo-offset-y: 18px; }
+  .map-marker-marchena { --photo-offset-x: 25px; --photo-offset-y: -23px; }
+  .map-marker-genovesa { --photo-offset-x: 35px; --photo-offset-y: -7px; }
+  .map-marker-fernandina { --photo-offset-x: -37px; --photo-offset-y: -10px; }
+  .map-marker-isabela { --photo-offset-x: 35px; --photo-offset-y: 19px; }
+  .map-marker-santiago { --photo-offset-x: -5px; --photo-offset-y: -39px; }
+  .map-marker-santa-cruz { --photo-offset-x: 23px; --photo-offset-y: -36px; }
+  .map-marker-san-cristobal { --photo-offset-x: -20px; --photo-offset-y: -63px; }
+  .map-marker-floreana { --photo-offset-x: 20px; --photo-offset-y: -30px; }
+  .map-marker-espanola { --photo-offset-x: -8px; --photo-offset-y: -62px; }
+}
+
+@media (max-width: 370px) {
+  .galapagos-header { padding-inline: 12px; }
+  .galapagos-layout { width: calc(100% - 18px); }
+  .island-marker-name { font-size: 7px; }
+  .finch-card { grid-template-columns: minmax(100px, .75fr) minmax(0, 1.25fr); }
+  .finch-photo { min-height: 205px; }
+  .finch-card-copy { padding: 8px; }
+  .finch-facts > div { grid-template-columns: 33px minmax(0,1fr); }
+}
+
+/* Island relief, fuller profiles and field-guide environment cards */
+.map-island-land { stroke: #69785e; stroke-width: 1.5; stroke-linejoin: round; }
+.map-island-pinta .map-island-land, .map-island-santiago .map-island-land { fill: #948d67; }
+.map-island-marchena .map-island-land, .map-island-fernandina .map-island-land { fill: #696d60; }
+.map-island-genovesa .map-island-land, .map-island-espanola .map-island-land { fill: #978367; }
+.map-island-isabela .map-island-land, .map-island-santa-cruz .map-island-land, .map-island-san-cristobal .map-island-land { fill: #84936f; }
+.map-island-santa-fe .map-island-land, .map-island-floreana .map-island-land { fill: #8b8b68; }
+.map-island-shore { fill: #a87859; opacity: .35; }
+.island-relief { pointer-events: none; }
+.relief-dry { fill: #c4a778; opacity: .88; }
+.relief-rock { fill: #706f61; opacity: .78; }
+.relief-lava-field { fill: #4f5b55; opacity: .72; }
+.relief-green { fill: #a0ad79; opacity: .93; }
+.relief-volcano { fill: #575f55; opacity: .9; }
+.relief-contour, .relief-ridge { fill: none; stroke: #d8c99f; stroke-width: 2; stroke-linecap: round; opacity: .68; }
+.relief-ridge { stroke: #c9d0a0; stroke-width: 4; }
+.relief-lava { fill: none; stroke: #3e4b49; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; opacity: .82; }
+.relief-crater-rim { fill: #a28c69; stroke: #665f50; stroke-width: 3; }
+.relief-crater-bowl { fill: #666b5c; stroke: #d1bd91; stroke-width: 2; }
+.relief-coast { fill: none; stroke: #e1d1a7; stroke-width: 2; stroke-linecap: round; opacity: .8; }
+.relief-cactus { fill: none; stroke: #647e59; stroke-width: 2.7; stroke-linecap: round; stroke-linejoin: round; }
+.map-island-selection-halo { fill: none; stroke: #fbfaf4; stroke-width: 8; stroke-linejoin: round; opacity: .92; }
+.map-island-selection { fill: none; stroke: #3c7750; stroke-width: 3; stroke-linejoin: round; }
+.map-island.is-selected .map-island-land { stroke: #3d7751; stroke-width: 2.5; }
+.galapagos-island-marker.is-selected .island-marker-badge { width: 35px; height: 35px; border: 2px solid #3d7751; background: #fffefa; box-shadow: 0 0 0 3px rgba(255, 254, 250, .78); }
+.map-key-island { background: #9a9670; }
+
+.profile-landscapes { margin: 0 0 13px; }
+.profile-landscapes-heading { display: flex; align-items: end; justify-content: space-between; gap: 8px; margin-bottom: 7px; }
+.profile-landscapes-heading h3 { margin: 2px 0 0; color: #365541; font: 15px Georgia, serif; }
+.profile-landscape-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
+.profile-landscape-card { min-width: 0; overflow: hidden; border: 1px solid #e1e6dc; border-radius: 4px; background: #f9f9f2; }
+.profile-landscape-card .environment-art { height: 52px; }
+.profile-landscape-card > div:last-child { display: grid; gap: 3px; padding: 6px 7px 7px; }
+.profile-landscape-card strong { color: #4b624f; font-size: 10px; line-height: 1.2; }
+.profile-landscape-card span { color: #7b897b; font-size: 9px; line-height: 1.35; }
+.island-facts { border-top: 1px solid #dfe4dd; }
+.island-facts > div { grid-template-columns: 105px minmax(0, 1fr); padding: 8px 0; }
+.habitat-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.habitat-tags span { padding: 3px 6px; border: 1px solid #e1e6d9; border-radius: 99px; background: #f5f6ee; color: #5c715e; font-size: 9px; line-height: 1.2; }
+.species-total { display: inline-flex; align-items: baseline; gap: 4px; padding: 5px 8px; border: 1px solid #dce5d9; border-radius: 99px; background: #f1f5ed; color: #6b7d6b; }
+.species-total strong { color: #3d684a; font-size: 13px; }
+.species-total small { font-size: 9px; }
+.finch-section-heading { align-items: center; }
+.finch-section-heading h3 { font-size: 17px; }
+.finch-card-list { gap: 11px; }
+.finch-photo { aspect-ratio: 1.2 / 1; }
+.finch-photo-credit { padding: 7px 8px; font-size: 8px; }
+.finch-card-copy { padding: 10px 11px 11px; }
+.finch-card-copy h4 { font-size: 14px; }
+.finch-description { min-height: 0; margin: 6px 0 8px; font-size: 11px; }
+.finch-facts { gap: 6px; }
+.finch-facts > div { grid-template-columns: 48px minmax(0,1fr); gap: 5px; }
+.finch-facts dt { font-size: 9px; }
+.finch-facts dd { font-size: 10px; line-height: 1.4; }
+.why-island-matters { margin-top: 14px; padding: 13px 14px; border-left: 2px solid #9bab86; background: #f2f4ec; }
+.why-island-matters h3 { margin: 4px 0 5px; color: #36533f; font: 16px Georgia, serif; }
+.why-island-matters p { margin: 0; color: #637262; font-size: 11px; line-height: 1.55; }
+
+.archipelago-environments { margin: 23px 0 4px; padding: 19px; border: 1px solid #dce2db; border-radius: 7px; background: #fbfaf5; }
+.environment-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 14px; }
+.environment-section-heading h2 { margin: 5px 0 0; color: #2f4a38; font-size: 20px; font-weight: 550; letter-spacing: -.025em; }
+.environment-section-heading p { max-width: 330px; margin: 0; color: #748176; font: 12px/1.5 Georgia, serif; text-align: right; }
+.environment-card-grid { display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 9px; }
+.environment-card { min-width: 0; overflow: hidden; border: 1px solid #e0e5dc; border-radius: 4px; background: #fffefa; }
+.environment-art { overflow: hidden; background: #dce8e4; }
+.environment-art svg { display: block; width: 100%; height: 100%; }
+.environment-card .environment-art { height: 96px; }
+.environment-card-copy { padding: 9px 9px 10px; }
+.environment-card-copy h3 { margin: 0; color: #405944; font-size: 11px; line-height: 1.25; }
+.environment-card-copy p { margin: 5px 0 0; color: #7b8779; font-size: 10px; line-height: 1.4; }
+.env-sky { fill: #e9efdf; }
+.env-rock { fill: #716f60; }
+.env-lava-line { fill: none; stroke: #48544f; stroke-width: 2; stroke-linecap: round; }
+.env-volcano-snow { fill: #d9d4bc; }
+.env-sea { fill: #9ebfbd; }
+.env-cliff { fill: #897e65; }
+.env-foam { fill: none; stroke: #f5f1dc; stroke-width: 2; stroke-linecap: round; }
+.env-sun { fill: #d8b674; }
+.env-dune { fill: #c9ae7e; }
+.env-dune-back { fill: #a8a072; }
+.env-scrub { fill: none; stroke: #71805e; stroke-width: 2; stroke-linecap: round; }
+.env-highland-back { fill: #9cad85; }
+.env-highland-front { fill: #7e936f; }
+.env-tree { fill: none; stroke: #546f54; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.env-cactus-ground { fill: #c0a571; }
+.env-big-cactus { fill: none; stroke: #62805a; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.env-small-cactus { fill: none; stroke: #718760; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.env-shrub-ground { fill: #a8a478; }
+
+@media (max-width: 1180px) {
+  .profile-landscapes, .profile-kicker, .profile-title-row, .profile-intro, .island-facts { grid-column: 1; }
+  .island-finch-section { grid-column: 2; grid-row: 1 / span 5; }
+  .why-island-matters { grid-column: 1 / -1; }
+  .archipelago-environments { margin-top: 19px; }
+}
+@media (max-width: 760px) {
+  .galapagos-profile { display: block; }
+  .island-finch-section { grid-column: auto; grid-row: auto; }
+  .why-island-matters { grid-column: auto; }
+  .archipelago-environments { padding: 15px; }
+  .environment-card-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .environment-card .environment-art { height: 84px; }
+}
+@media (max-width: 520px) {
+  .profile-landscape-card .environment-art { height: 62px; }
+  .profile-landscape-card > div:last-child { padding: 6px; }
+  .profile-landscape-card strong { font-size: 9px; }
+  .profile-landscape-card span { font-size: 8px; }
+  .island-facts > div { grid-template-columns: 94px minmax(0, 1fr); }
+  .finch-card-list { grid-template-columns: minmax(0,1fr); }
+  .finch-card { display: block; }
+  .finch-photo { min-height: 0; height: auto; aspect-ratio: 1.45 / 1; }
+  .finch-card-copy { padding: 12px 13px; }
+  .finch-card-copy h4 { font-size: 15px; }
+  .finch-scientific-name { font-size: 11px; }
+  .finch-description { font-size: 11px; }
+  .finch-facts > div { grid-template-columns: 60px minmax(0,1fr); }
+  .finch-facts dt, .finch-facts dd { font-size: 10px; }
+  .environment-section-heading { display: block; }
+  .environment-section-heading p { margin-top: 6px; text-align: left; }
+  .environment-card-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .environment-card .environment-art { height: 92px; }
+}
+
+/* The supplied raised-relief map is the geographic base; each island has one field-guide marker. */
+.galapagos-map-viewport { aspect-ratio: 1100 / 820; background: #bfd8d7; }
+.galapagos-map-reference { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; }
+.galapagos-marker-layer { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.galapagos-island-marker {
+  position: absolute;
+  top: var(--marker-y);
+  left: var(--marker-x);
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  width: clamp(52px, 12%, 84px);
+  min-width: 0;
+  padding: 3px;
+  transform: translate(-50%, -50%);
+  border: 1px solid #d0d8c9;
+  border-radius: 4px;
+  background: rgba(255, 254, 248, .96);
+  color: #344d3c;
+  box-shadow: 0 2px 7px rgba(31, 49, 37, .24);
+  cursor: pointer !important;
+  pointer-events: auto;
+}
+.galapagos-island-marker.is-selected { z-index: 5; border-color: #426c4b; box-shadow: 0 0 0 2px rgba(255, 254, 248, .95), 0 2px 8px rgba(31, 49, 37, .3); }
+.galapagos-island-marker:focus-visible { outline: 2px solid #284e34; outline-offset: 2px; }
+.island-marker-name { display: block; max-width: 100%; min-height: 0; padding: 0; overflow: hidden; border: 0; background: transparent; color: #385440; font-size: 8px !important; font-weight: 750; line-height: 1.1; text-align: center; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
+.galapagos-island-marker.is-selected .island-marker-name { background: transparent; color: #234e32; box-shadow: none; }
+.map-specimen-photo { display: block; width: 100%; height: auto; aspect-ratio: 1.4 / 1; border: 0; border-radius: 2px; background: #25302b; object-fit: cover; object-position: center 45%; }
+.map-specimen-name { display: -webkit-box; min-height: 1.7em; max-width: 100%; overflow: hidden; color: #4a5b4a; font-size: 7px; font-weight: 650; line-height: 1.12; text-align: center; text-overflow: ellipsis; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.galapagos-map-card .map-island-count { color: #466451; }
+.galapagos-map-caption { margin-top: 9px; color: #667768; font-style: normal; }
+
+.galapagos-profile .finch-card-list { grid-template-columns: minmax(0, 1fr); }
+.galapagos-profile .finch-card { display: grid; grid-template-columns: minmax(105px, .62fr) minmax(0, 1.38fr); align-items: start; }
+.galapagos-profile .finch-photo { height: 158px; min-height: 0; aspect-ratio: auto; background: #202521; }
+.galapagos-profile .finch-photo img { object-fit: cover; object-position: center; }
+.galapagos-profile .finch-card-copy { min-width: 0; padding: 10px; }
+.galapagos-profile .finch-description { min-height: 0; }
+.galapagos-profile .finch-facts > div { grid-template-columns: 46px minmax(0, 1fr); }
+.finch-distribution { margin: 8px 0 0; color: #6f7f70; font-size: 9px; line-height: 1.4; }
+.finch-source-links { display: flex; flex-wrap: wrap; gap: 4px 11px; margin-top: 8px; }
+.finch-source-links .finch-source-link { margin-top: 0; font-size: 9px; }
+.record-note { margin: 9px 0 0; color: #7a877b; font-size: 10px; line-height: 1.5; }
+.record-note a { color: #55775e; text-decoration: underline; text-underline-offset: 2px; }
+
+/* Fine leaders tie each single photo card to its geographic island anchor. */
+.map-specimen-leaders { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.map-specimen-leaders line { stroke: rgba(54, 72, 56, .78); stroke-width: .34; stroke-dasharray: 1.1 .7; }
+.map-specimen-leaders circle { fill: #f5edcf; stroke: #465c47; stroke-width: .35; }
+.galapagos-island-marker { width: clamp(56px, 13%, 84px); }
+.island-marker-name { font-size: 7px !important; }
+
+@media (max-width: 520px) {
+  .galapagos-map-viewport { aspect-ratio: 1100 / 820; }
+  .galapagos-island-marker { width: clamp(52px, 16.5%, 58px); padding: 2px; }
+  .island-marker-name { font-size: 6px !important; }
+  .map-specimen-name { font-size: 6px; }
+  .galapagos-profile .finch-card { grid-template-columns: minmax(96px, .62fr) minmax(0, 1.38fr); }
+  .galapagos-profile .finch-photo { height: 150px; }
+  .galapagos-profile .finch-card-copy { padding: 9px; }
+  .galapagos-profile .finch-card-copy h4 { font-size: 14px; }
+  .finch-distribution { font-size: 8.5px; }
+  .finch-source-links .finch-source-link { font-size: 8.5px; }
+}
